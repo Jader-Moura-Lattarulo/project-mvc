@@ -1,0 +1,12 @@
+<%= form_with(model: @product) do |form| %>
+    <%= form.label :"Nome:" %>
+    <%= form.text_field :name %>
+
+    <%= form.label :"Quantidade:" %>
+    <%= form.number_field :amuont %>
+    
+    <%= form.label :"Preço:" %>
+    <%= form.number_field :price %>
+
+    <%= form.submit "Salvar" %>
+<%end%>
