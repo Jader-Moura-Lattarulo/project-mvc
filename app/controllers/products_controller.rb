@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-    before_action :set_product, only: [:show, :edit]
+    before_action :set_product, only: [:show, :edit, :update, :destroy]
     
     def index
         @products = Product.all
@@ -28,6 +28,14 @@ class ProductsController < ApplicationController
             redirect_to products_url(@product)
         else
             render:new, status: :unprocessable_entity
+        end
+    end
+
+    def destroy
+        if @product.destroy
+            redirect_to products_url, notice: 'Produto excluído com sucesso.'
+        else
+            redirect_to products_url, alert: 'Erro ao excluir o produto.' 
         end
     end
 
