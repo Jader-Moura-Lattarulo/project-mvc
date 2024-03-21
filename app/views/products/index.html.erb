@@ -1,9 +1,13 @@
 <h1>Hello World!</h1>
 <h2>Olá, estou em index/controller products</h2>
 
+<%= link_to "Criar produto", new_product_path %>
+
 <% @products.each do |product| %>
     <p><%= product.name %></p>
     <p><%= product.amuont %></p>
     <p><%= product.price %></p>
+
+    <%= link_to "Ver produto", product %>
 
 <% end %>
